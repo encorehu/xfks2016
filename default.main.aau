@@ -159,7 +159,7 @@ doMultiple=function(queryset,k,v){
 
 	for(i=1;#ddd;1){
 
-		lists[ddd[i]-1].click()
+		lists(ddd[i]-1).click()
 
 	}
 
