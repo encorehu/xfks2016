@@ -297,6 +297,68 @@ xianfa=function(){
 	log("宪法的前世今生")
 	wb.go("http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f0f2ee0154f0f70e1c0000&ebookId=c8401e937fca486c08a6628554e91e14")
 	wb.wait()
+
+	chapters=load_data("/res/xianfa_chapters.txt", "/res/xianfa_answers.txt")
+	for(k,v in chapters){
+		url = v["url"]
+		wb.go(url)
+
+		wb.wait(url,3000) //dengdai 页面下载完成
+		wb.document.documentElement.scrollTop=45000;
+
+		log("学习"++url)
+		log("开始答题")
+
+		var qs = wb.queryEles(className = "question_option") //答题区
+	    log("===本节发现"++tostring(#qs)++"个题目")
+
+
+		for(k1,answer in v["answers"]){
+			if(answer["fenlei"]=="单选题"){
+
+				doSingle(qs, answer["no"],answer["answer"])
+			}elseif(answer["fenlei"]=="判断题"){
+
+				doYesno(qs,answer["no"],answer["answer"])
+			}elseif(answer["fenlei"]=="多选题") {
+
+				doMultiple(qs,answer["no"],answer["answer"])
+			}else {
+
+				log("无法答题，跳过")
+			}
+
+
+
+
+		}
+
+
+		tijiaobtn=wb.getEle("submitBtn")
+		if(tijiaobtn!=null){
+			tijiaobtn.focus()
+			tijiaobtn.fireEvent("onfocus");
+			tijiaobtn.click()
+			wb.wait()
+		}
+
+		thediv=wb.queryEles(tagName="div";className = "btns")
+		a=wb.queryEles( parent = thediv; className = "mybutton icon")
+		//console.varDump(a)
+		a[1].focus()
+		a[1].fireEvent("onfocus");
+		//log("设置焦点")
+
+
+		log("本页按钮名称:"++a[1].innerText)
+
+
+		win.delay(3000)
+		//break ;
+
+	}
+	log("结束学习宪法的前世今生")
+	log("==================================")
 }
 
 
