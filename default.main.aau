@@ -53,11 +53,7 @@ init=function(){
     wb.go("http://xfkf.rufa.gov.cn/login.html")
     wb.wait()
 	
-	var ele=wb.getEle("username")
-	ele.value = mainForm.edit_username.text
-	
-	ele=wb.getEle("password")
-	ele.value = mainForm.edit_pass.text
+
 	
 }
 
@@ -196,6 +192,13 @@ mainForm.button.oncommand = function(id,event){
 	
     ele=wb.getEle("userLoginSubBtn")
 	if(ele!=null){
+
+		var ele=wb.getEle("username")
+		ele.value = mainForm.edit_username.text
+
+		ele=wb.getEle("password")
+		ele.value = mainForm.edit_pass.text
+
 		ele.click()	
 		log("点击登录按钮")
 	}else{
