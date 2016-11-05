@@ -230,8 +230,10 @@ init()
 
 //七五普法
 pufa=function(){
+	log("==================================")
 	log("开始学习2016湖南省七五普法读本")
 	wb.go("http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f0f2ee0154f0f70e1c0000&ebookId=e086f65ac948038d87a1bf3eb747bf4e")
+	wb.wait()
 	//chapters=[
 	//"1_1"="";
 	//]
