@@ -175,7 +175,7 @@ doYesno=function(queryset,k,v){
 	//console.varDump(queryset)
 	var d=queryset(tonumber(k)-1)
 	var lists =d.getElementsByTagName("input")
-	lists[v-1].click()
+	lists(v-1).click()
 }
 
 
