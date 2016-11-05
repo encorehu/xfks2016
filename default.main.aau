@@ -289,7 +289,8 @@ pufa=function(){
 		if(tijiaobtn!=null){
 			tijiaobtn.focus()
 			tijiaobtn.fireEvent("onfocus");
-			//tijiaobtn.click()
+			tijiaobtn.click()
+			wb.wait()
 		}
 
 
