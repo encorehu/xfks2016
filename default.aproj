@@ -2,6 +2,14 @@
 <project ver="10" name="学法考试2016" libEmbed="true" icon="..." ui="win" output="学法考试2016.exe" CompanyName="单位名称" FileDescription="学法考试2016" LegalCopyright="Copyright (C) 糊糊 2015" ProductName="学法考试2016" InternalName="学法考试2016" FileVersion="0.0.0.1" ProductVersion="0.0.0.1" publishDir="/Publish/" dstrip="false">
 	<file name="main.aau" path="default.main.aau" comment="default.main.aau"/>
 	<folder name="资源文件" path="res" embed="true">
-		<file name="settings.aau" path="res\settings.aau" comment="res\config.aau"/>
+		<file name="com.ico" path="res\com.ico" comment="res\com.ico"/>
+		<file name="jingcha_answers.txt" path="res\jingcha_answers.txt" comment="res\jingcha_answers.txt"/>
+		<file name="jingcha_chapters.txt" path="res\jingcha_chapters.txt" comment="res\jingcha_chapters.txt"/>
+		<file name="pufa_answers.txt" path="res\pufa_answers.txt" comment="res\pufa_answers.txt"/>
+		<file name="pufa_chapters.txt" path="res\pufa_chapters.txt" comment="res\pufa_chapters.txt"/>
+		<file name="tongxinglian_answers.txt" path="res\tongxinglian_answers.txt" comment="res\tongxinglian_answers.txt"/>
+		<file name="tongxinglian_chapters.txt" path="res\tongxinglian_chapters.txt" comment="res\tongxinglian_chapters.txt"/>
+		<file name="xianfa_answers.txt" path="res\xianfa_answers.txt" comment="res\xianfa_answers.txt"/>
+		<file name="xianfa_chapters.txt" path="res\xianfa_chapters.txt" comment="res\xianfa_chapters.txt"/>
 	</folder>
 </project>

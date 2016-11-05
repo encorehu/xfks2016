@@ -1,0 +1,6 @@
+1		http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f190be0154f1b0c4810037&ebookId=c8401e937fca486c08a6628554e91e14&detailId=1182606219f64a05404e6e9daa2cbda7&bookType=root_xuefks_dblx_ggdb
+2		http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f190be0154f1b0c4810037&ebookId=c8401e937fca486c08a6628554e91e14&detailId=24d52521a6ba2cb7b51cf11b26850ca9&bookType=root_xuefks_dblx_ggdb
+3		http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f190be0154f1b0c4810037&ebookId=c8401e937fca486c08a6628554e91e14&detailId=ca9bf18970d81240c362039e6b620644&bookType=root_xuefks_dblx_ggdb
+4		http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f190be0154f1b0c4810037&ebookId=c8401e937fca486c08a6628554e91e14&detailId=db243ada1e6b406edfa4151aba11b9cf&bookType=root_xuefks_dblx_ggdb
+5		http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f190be0154f1b0c4810037&ebookId=c8401e937fca486c08a6628554e91e14&detailId=fd04a4839321174f2947071350b2b8eb&bookType=root_xuefks_dblx_ggdb
+6		http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f190be0154f1b0c4810037&ebookId=c8401e937fca486c08a6628554e91e14&detailId=b771b64a9886928553b505632765fe41&bookType=root_xuefks_dblx_ggdb
