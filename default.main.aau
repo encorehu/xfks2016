@@ -230,7 +230,7 @@ pufa=function(){
 	wb.go("http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f0f2ee0154f0f70e1c0000&ebookId=e086f65ac948038d87a1bf3eb747bf4e")
 	wb.wait()
 
-	chapters=load_data("/pufa_chapters.txt", "/pufa_answers.txt")
+	chapters=load_data("/res/pufa_chapters.txt", "/res/pufa_answers.txt")
 	for(k,v in chapters){
 		url = v["url"]
 		wb.go(url)
