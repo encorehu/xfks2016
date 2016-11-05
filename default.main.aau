@@ -267,16 +267,16 @@ pufa=function(){
 
 		for(k1,answer in v["answers"]){
 			if(answer["fenlei"]=="单选题"){
-				log("这是一个单选题，答案："++tostring(answer["answer"]))
+
 				doSingle(qs, answer["no"],answer["answer"])
 			}elseif(answer["fenlei"]=="判断题"){
-				log("判断题，答案："++tostring(answer["answer"]))
+
 				doYesno(qs,answer["no"],answer["answer"])
 			}elseif(answer["fenlei"]=="多选题") {
-				log("多选题，答案："++tostring(answer["answer"]))
+
 				doMultiple(qs,answer["no"],answer["answer"])
 			}else {
-				log("未知题型，答案："++tostring(answer["answer"]))
+
 				log("无法答题，跳过")
 			}
 
