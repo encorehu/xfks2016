@@ -192,6 +192,7 @@ doYesno=function(queryset,k,v){
 
 mainForm.button.oncommand = function(id,event){
 	//mainForm.msgbox( mainForm.button.text );
+	mainForm.listbox.clear()
 	
     ele=wb.getEle("userLoginSubBtn")
 	if(ele!=null){
