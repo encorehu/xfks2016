@@ -144,7 +144,7 @@ doSingle=function(queryset, k,v){
 	//console.varDump(d)
 
 
-	var lists =d.getElementsByTagName("input")
+	var lists = d.getElementsByTagName("input")
 	//console.varDump(lists)
 	//lists[v-1].click() //这种写法不行,要用小括号
 	lists(v-1).click()
