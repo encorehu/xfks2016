@@ -16,45 +16,45 @@ static3={cls="static";text="密码";left=551;top=54;right=591;bottom=72;dr=1;dt=
 /*}}*/
 
 console.open()
-//创建web窗体  
+//创建web窗体
 
- var wb = web.form( mainForm.static  
- ,//可输入_UIFLAG_ 前缀的常量自定义外观  
- ,//可输入_DLCTL_ 前缀的常量以控制下载行为 
- ,//"USER AGENT"  
- );  
- 
+ var wb = web.form( mainForm.static
+ ,//可输入_UIFLAG_ 前缀的常量自定义外观
+ ,//可输入_DLCTL_ 前缀的常量以控制下载行为
+ ,//"USER AGENT"
+ );
 
-wb.noScriptErr=true;  
+
+wb.noScriptErr=true;
 
 web.form.util.emulation(8888)
 
-wb.NewWindow2=function( ppDisp, Cancel) {  
- return ppDisp, true; /*第二个返回值如果为真，则取消新窗口*/     
-}  
+wb.NewWindow2=function( ppDisp, Cancel) {
+ return ppDisp, true; /*第二个返回值如果为真，则取消新窗口*/
+}
 
 wb.DocumentComplete=function( pDisp, url) {
 	mainForm.text=wb.document.title;
-} 
+}
 
 
 log=function(text){
 
 	mainForm.listbox.add(text)
-	
+
 }
 
 
 init=function(){
-	    
+
     //wb.go("http://xfkf.rufa.gov.cn/")
     //wb.wait()
-    
+
     wb.go("http://xfkf.rufa.gov.cn/login.html")
     wb.wait()
-	
 
-	
+
+
 }
 
 
@@ -63,7 +63,7 @@ load_data=function(filepath_chapters, filepath_answers){
 	text = string.load(filepath_chapters)
 	lines = string.split(text,'<\r\n>')
 	chapter_list={}
-	
+
 	for(k,v in lines){
 		chapter = {}
 		vol, chp, url = table.unpack(string.split(v,'\t'))
@@ -73,22 +73,22 @@ load_data=function(filepath_chapters, filepath_answers){
 		chapter["answers"]={};
 		table.push(chapter_list,chapter)
 	}
-	
+
 	//加载答案
 	text = string.load(filepath_answers)
 	lines = string.split(text,'<\r\n>')
 
 	for(k,v in lines){
 		//每一行都是单个章节的所有答案，按顺序来的
-		
+
 		answers = {}
-		
+
 		as=string.split(v,'\t')
-		
+
 		//log(tostring(k)++"节，有"++tostring(#as) ++"道题")
-		
+
 		for(key,value in as){
-			answer={} //答案初始化 
+			answer={} //答案初始化
 			if(#value==1){
 				//单选或者判断题
 				//console.print(i,"单选或者判断题")
@@ -96,22 +96,22 @@ load_data=function(filepath_chapters, filepath_answers){
 					//log(tostring(key)++"判断题")
 					answer["fenlei"]="判断题"
 					if(string.lower(value)=='x'){
-						answer["answer"]=2 //false;	
+						answer["answer"]=2 //false;
 					}elseif(string.lower(value)=='y') {
 						answer["answer"]=1 //true
 					}else {
 						answer["answer"]=2 //false;	//其他情况，错误
 					}
-					
-					
-					
+
+
+
 				}else {
 					//log(tostring(key)++"单选题")
 					answer["fenlei"]="单选题"
 					answer["fenlei"]="单选题"
 					answer["answer"]=tonumber(value)
 				}
-				
+
 			}else {
 		    	//log(tostring(key)++"多选题")
 		    	answer["fenlei"]="多选题"
@@ -119,13 +119,13 @@ load_data=function(filepath_chapters, filepath_answers){
 			}
 			answer["no"] = key //题目序号
 			table.push(answers,answer) //单个答案，压入答案集
-			
+
 		}
 
 		chapter_list[k]["answers"]=answers
     	//log("")
 	}
-	
+
 	return chapter_list;
 }
 
@@ -135,8 +135,8 @@ learn_chapters_and_answers=function(chapter){
 
 
 	wb.go(chapter[3])
-	
-	
+
+
 }
 
 
@@ -149,7 +149,7 @@ doSingle=function(queryset, k,v){
 	var d=queryset(tonumber(k)-1)
 	var lists =d.getElementsByTagName("input")
 	lists[v-1].click()
-	
+
 }
 
 
@@ -161,20 +161,20 @@ doMultiple=function(queryset,k,v){
 	var d=queryset(tonumber(k)-1)
 	var lists =d.getElementsByTagName("input")
 	ddd=string.split(v,',')
-	
+
 	for(i=1;#ddd;1){
-		
+
 		lists[ddd[i]-1].click()
-	
+
 	}
-	
-	
-	
+
+
+
 }
 
 
 doYesno=function(queryset,k,v){
-	//v是true， false 
+	//v是true， false
 	log(tostring(type(queryset(0)))) //com.IDdispatch
 	log("第"++tostring(k)++"题,答案是:"++tostring(v))
 	//console.varDump(queryset)
@@ -189,7 +189,7 @@ doYesno=function(queryset,k,v){
 mainForm.button.oncommand = function(id,event){
 	//mainForm.msgbox( mainForm.button.text );
 	mainForm.listbox.clear()
-	
+
     ele=wb.getEle("userLoginSubBtn")
 	if(ele!=null){
 
@@ -199,17 +199,17 @@ mainForm.button.oncommand = function(id,event){
 		ele=wb.getEle("password")
 		ele.value = mainForm.edit_pass.text
 
-		ele.click()	
+		ele.click()
 		log("点击登录按钮")
 	}else{
 		log("本页面没有登录按钮")
 	}
 	wb.wait()
-	
+
 	pufa()
-	
+
 }
-//mainForm.show() 
+//mainForm.show()
 
 
 
@@ -218,8 +218,8 @@ mainForm.show(0x3/*_SW_MAXIMIZE*/)
 
 //mainForm.hitmax()
 
-wb.go("http://www.rufa.gov.cn")  
-wb.wait() 
+wb.go("http://www.rufa.gov.cn")
+wb.wait()
 init()
 
 
@@ -235,34 +235,34 @@ pufa=function(){
 	//chapters=[
 	//"1_1"="";
 	//]
-	
+
 	text = string.load("/pufa_chapters.txt")
 	lines = string.split(text,'\n\r')
- 
+
 	console.print(tostring(type(lines)))
 	//console.dump(lines)
-	
+
 	for(k,v in lines){
 		console.print(k,v)
 		console.print(string.split(v,'\t')[3])
 	}
-		
-		
+
+
 	chapters=load_data("/pufa_chapters.txt", "/pufa_answers.txt")
 	for(k,v in chapters){
 		url = v["url"]
 		wb.go(url)
 		wb.wait() //dengdai 页面下载完成
-		
+
 		wb.document.documentElement.scrollTop=45000;
-		
+
 		log("学习"++url)
 		log("开始答题")
-		
+
 		var qs = wb.queryEles(className = "question_option") //答题区
 	    log("===本节发现"++tostring(#qs)++"个题目")
-	
-	
+
+
 		for(k1,answer in v["answers"]){
 			if(answer["fenlei"]=="单选题"){
 				log("这是一个单选题，答案："++tostring(answer["answer"]))
@@ -277,34 +277,34 @@ pufa=function(){
 				log("未知题型，答案："++tostring(answer["answer"]))
 				log("无法答题，跳过")
 			}
-			
-			
-			
-		
+
+
+
+
 		}
-		
+
 		tijiaobtn=wb.getEle("submitBtn")
 		if(tijiaobtn!=null){
 			tijiaobtn.focus()
 			tijiaobtn.fireEvent("onfocus");
 			//tijiaobtn.click()
 		}
-		
-		
+
+
 		thediv=wb.queryEles(tagName="div";className = "btns")
 		a=wb.queryEles( parent = thediv; className = "mybutton icon")
 		console.varDump(a)
 		a[1].focus()
 		a[1].fireEvent("onfocus");
 		log("设置焦点")
-		
-        
+
+
 		log(""++a[1].innerText)
 		win.delay(15000)
 		break ;
-		
+
 	}
-	
+
 }
 //学习宪法
 xianfa=function(){
@@ -342,4 +342,4 @@ xianfa=function(){
 
 
 
-return win.loopMessage(); 
+return win.loopMessage();
