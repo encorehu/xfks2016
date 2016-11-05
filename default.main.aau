@@ -3,7 +3,7 @@ import web.form;
 import web.form.util;
 import console;
 /*DSG{{*/
-mainForm = win.form(text="aardio form";right=802;bottom=532)
+mainForm = win.form(text="学法考试2016";right=802;bottom=532)
 mainForm.add(
 button={cls="button";text="开始学法";left=609;top=93;right=775;bottom=132;db=1;dr=1;z=2};
 edit_pass={cls="edit";text="000000";left=609;top=47;right=773;bottom=72;dr=1;dt=1;edge=1;multiline=1;z=5};
