@@ -1,7 +1,7 @@
 ﻿import win.ui;
 import web.form;
 import web.form.util;
-import console;
+//import console;
 /*DSG{{*/
 mainForm = win.form(text="学法考试2016";right=802;bottom=532)
 mainForm.add(
@@ -15,7 +15,7 @@ static3={cls="static";text="密码";left=551;top=54;right=591;bottom=72;dr=1;dt=
 )
 /*}}*/
 
-console.open()
+//console.open()
 //创建web窗体
 
  var wb = web.form( mainForm.static
@@ -134,14 +134,15 @@ load_data=function(filepath_chapters, filepath_answers){
 
 doSingle=function(queryset, k,v){
 	//v是数字
-	log(tostring(type(queryset(0)))) //com.IDdispatch
+	//log(tostring(type(queryset(0)))) //com.IDdispatch
 	log("第"++tostring(k)++"题,答案是:"++tostring(v))
 	//console.varDump(queryset)
 	var d=queryset(tonumber(k)-1)
-	console.varDump(d)
+	//console.varDump(d)
+
 
 	var lists =d.getElementsByTagName("input")
-	console.varDump(lists)
+	//console.varDump(lists)
 	//lists[v-1].click() //这种写法不行,要用小括号
 	lists(v-1).click()
 
@@ -150,7 +151,7 @@ doSingle=function(queryset, k,v){
 
 doMultiple=function(queryset,k,v){
 	//v=2,1,3 之类
-	log(tostring(type(queryset(0)))) //com.IDdispatch
+	//log(tostring(type(queryset(0)))) //com.IDdispatch
 	log("第"++tostring(k)++"题,答案是:"++tostring(v))
 	//console.varDump(queryset)
 	var d=queryset(tonumber(k)-1)
@@ -170,7 +171,7 @@ doMultiple=function(queryset,k,v){
 
 doYesno=function(queryset,k,v){
 	//v是true， false
-	log(tostring(type(queryset(0)))) //com.IDdispatch
+	//log(tostring(type(queryset(0)))) //com.IDdispatch
 	log("第"++tostring(k)++"题,答案是:"++tostring(v))
 	//console.varDump(queryset)
 	var d=queryset(tonumber(k)-1)
@@ -292,15 +293,15 @@ pufa=function(){
 
 		thediv=wb.queryEles(tagName="div";className = "btns")
 		a=wb.queryEles( parent = thediv; className = "mybutton icon")
-		console.varDump(a)
+		//console.varDump(a)
 		a[1].focus()
 		a[1].fireEvent("onfocus");
-		log("设置焦点")
+		//log("设置焦点")
 
 
 		log("本页按钮名称:"++a[1].innerText)
 		win.delay(3000)
-		break ;
+		//break ;
 
 	}
 	log("结束学习2016湖南省七五普法读本")
