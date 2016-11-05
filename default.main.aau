@@ -138,7 +138,10 @@ doSingle=function(queryset, k,v){
 	log("第"++tostring(k)++"题,答案是:"++tostring(v))
 	//console.varDump(queryset)
 	var d=queryset(tonumber(k)-1)
+	console.varDump(d)
+
 	var lists =d.getElementsByTagName("input")
+	console.varDump(lists)
 	//lists[v-1].click() //这种写法不行,要用小括号
 	lists(v-1).click()
 
