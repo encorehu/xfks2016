@@ -313,8 +313,10 @@ pufa=function(){
 }
 //学习宪法
 xianfa=function(){
+	log("==================================")
 	log("宪法的前世今生")
 	wb.go("http://xfkf.rufa.gov.cn/index?pageId=4028c78d54f0f2ee0154f0f70e1c0000&ebookId=c8401e937fca486c08a6628554e91e14")
+	wb.wait()
 }
 
 
