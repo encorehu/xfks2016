@@ -254,7 +254,7 @@ pufa=function(){
 	for(k,v in chapters){
 		url = v["url"]
 		wb.go(url)
-		wb.wait() //dengdai 页面下载完成
+		wb.wait(url,3000) //dengdai 页面下载完成
 
 		wb.document.documentElement.scrollTop=45000;
 
