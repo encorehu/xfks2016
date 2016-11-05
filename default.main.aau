@@ -302,8 +302,8 @@ pufa=function(){
 		log("设置焦点")
 
 
-		log(""++a[1].innerText)
-		win.delay(15000)
+		log("本页按钮名称:"++a[1].innerText)
+		win.delay(3000)
 		break ;
 
 	}
