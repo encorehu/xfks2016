@@ -41,6 +41,7 @@ wb.DocumentComplete=function( pDisp, url) {
 log=function(text){
 
 	mainForm.listbox.add(text)
+	mainForm.listbox.selIndex=mainForm.listbox.count
 
 }
 
