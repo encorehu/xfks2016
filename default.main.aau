@@ -27,6 +27,9 @@ static3={cls="static";text="密码";left=551;top=54;right=591;bottom=72;dr=1;dt=
 
 wb.noScriptErr=true;
 
+//win7 ie11
+//web.form.util.emulation(11001)
+//winxp ie8
 web.form.util.emulation(8888)
 
 wb.NewWindow2=function( ppDisp, Cancel) {
