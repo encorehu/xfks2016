@@ -203,6 +203,22 @@ mainForm.button.oncommand = function(id,event){
 
 	pufa()
 
+	xianfa()
+
+	learn_and_do_quiz(
+		"警察执法权与公民权利的冲突",
+		"http://xfkf.rufa.gov.cn/index?pageId=4028c788537d33aa01537d82f19b0032&hotId=228cfdd7c4210d496aaa838d02b13c3e",
+		"/res/jingcha_chapters.txt",
+		"/res/jingcha_answers.txt"
+	)
+
+	learn_and_do_quiz(
+		"同性婚姻维权第一案",
+		"http://xfkf.rufa.gov.cn/index?pageId=4028c788537d33aa01537d82f19b0032&hotId=042fd8ad22419815fc699b8e620e1613",
+		"/res/tongxinglian_chapters.txt",
+		"/res/tongxinglian_answers.txt"
+	)
+
 }
 //mainForm.show()
 
