@@ -132,16 +132,6 @@ load_data=function(filepath_chapters, filepath_answers){
 
 
 
-learn_chapters_and_answers=function(chapter){
-
-
-	wb.go(chapter[3])
-
-
-}
-
-
-
 doSingle=function(queryset, k,v){
 	//v是数字
 	log(tostring(type(queryset(0)))) //com.IDdispatch
